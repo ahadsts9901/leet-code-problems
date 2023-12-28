@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+
+<body>
+
+    <h1>2667. Create hello world function</h1>
+    <p>Write a function createHelloWorld(). It should return a new function that always returns "Hello World".</p>
+    <p>output: <span id="output"></span></p>
+
+    <script>
+
+        function createHelloWorld() {
+            return function () {
+                return "Hello World"
+            }
+        }
+
+        const f = createHelloWorld()
+        f()
+        console.log(f());
+
+        // for output
+        document.querySelector("#output").innerText = f()
+
+    </script>
+
+</body>
+
+</html>

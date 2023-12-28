@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+
+<body>
+
+    <h1>349. Intersection of two arrays</h1>
+    <p>Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must
+        be unique and you may return the result in any order.</p>
+    <h2>example</h2>
+    <p>input:
+        <br />
+        <br />
+        nums1: [4, 9, 5]
+        <br />
+        nums2: [9, 4, 9, 8, 4]
+    </p>
+
+    <p>output: <span id="output"></span></p>
+
+    <script>
+
+        let arr1 = [4, 9, 5]
+        let arr2 = [9, 4, 9, 8, 4]
+
+        function intersection(nums1, nums2) {
+            var nums3 = []
+            for (let i = 0; i < nums1.length; i++) {
+                for (let j = 0; j < nums2.length; j++) {
+                    if (nums1[i] == nums2[j]) {
+                        nums3.push(nums1[i])
+                    }
+                }
+            }
+
+            const result = nums3.filter((value, index, self) => {
+                return self.indexOf(value) === index;
+            });
+
+            return result;
+
+        }
+
+        intersection(arr1, arr2)
+
+        // for output
+        document.querySelector("#output").innerText = intersection(arr1, arr2)
+
+    </script>
+
+</body>
+
+</html>
