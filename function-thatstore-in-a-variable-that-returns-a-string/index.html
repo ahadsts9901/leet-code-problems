@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+
+<body>
+
+    <h1>Leetcode problem 1</h1>
+    <p>create a function that store in a variable and when that
+        variables is called as a function so it returns a string.</p>
+    <p>output: <span id="output"></span></p>
+
+    <script>
+
+        function createHelloWorld() {
+            return function () {
+                return "Hello World"
+            }
+        }
+
+        const f = createHelloWorld()
+        f()
+        console.log(f());
+
+        // for output
+        document.querySelector("#output").innerText = f()
+
+    </script>
+
+</body>
+
+</html>
