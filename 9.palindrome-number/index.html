@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 9</title>
+</head>
+
+<body>
+
+    <h1>9. Palindrome number</h1>
+    <p>
+        Given an integer x, return true if x is a palindrome, and false otherwise.
+    </p>
+    <p>output: <span id="output"></span></p>
+
+    <script type="module">
+
+        const num = 132
+
+        const isPalindrome = (x) => {
+
+            var diversed = []
+            var reversed = []
+            var comparedResults = []
+            let result = ""
+
+            x = x.toString().split("")
+
+            for (let i = 0; i < x.length; i++) {
+                diversed.push(x[i])
+            }
+
+            for (let i = x.length - 1; i >= 0; i--) {
+                reversed.push(x[i])
+            }
+
+            for (let i = 0; i < reversed.length; i++) {
+                if (diversed[i] === reversed[i]) {
+                    result = true
+                } else {
+                    result = false
+                    break
+                }
+            }
+
+            return result
+
+        }
+
+
+        const result = isPalindrome(num);
+        document.querySelector("#output").innerText = result
+
+        console.log("output: ", isPalindrome(num));
+
+    </script>
+
+</body>
+
+</html>
