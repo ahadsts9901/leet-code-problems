@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+
+<body>
+
+    <h1>1. Two factor sum</h1>
+    <p>
+        Given an array of integers nums and an integer target, return indices of the two numbers such that they add up
+        to target.
+        <br />
+        You may assume that each input would have exactly one solution, and you may not use the same element twice.
+        <br />
+        You can return the answer in any order.
+    </p>
+    <p>output: <span id="output"></span></p>
+
+    <script type="module">
+
+        let arr1 = [3, 2, 4]
+        let target = 6
+
+        const twoSum = (nums, target) => {
+
+            for (let i = 0; i < nums.length; i++) {
+
+                for (let j = i + 1; j < nums.length; j++) {
+
+                    if (nums[i] + nums[j] == target) {
+                        return [i, j]
+                    }
+
+                }
+            }
+
+        }
+
+
+        const result = twoSum(arr1, target);
+        document.querySelector("#output").innerText = result
+
+        console.log(twoSum(arr1, target));
+
+    </script>
+
+</body>
+
+</html>
