@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 13</title>
+</head>
+
+<body>
+
+    <h1>13. Roman to integer</h1>
+    <p>
+        Roman numerals are represented by seven different symbols:
+        <b>I, V, X, L, C, D</b> and <b>M</b>.
+    </p>
+    <p>output: <span id="output"></span></p>
+
+    <script type="module">
+
+        const string = "XIX"
+
+        const romanToInt = function (s) {
+            let integer = 0;
+
+            const roman = {
+                I: 1,
+                V: 5,
+                X: 10,
+                L: 50,
+                C: 100,
+                D: 500,
+                M: 1000
+            }
+
+            for (let i = 0; i < s.length; i++) {
+
+                let char = roman[s[i]]
+                let nextChar = roman[s[i + 1]]
+
+                if ((char >= nextChar) || nextChar === undefined) {
+                    integer += char
+                }
+                else if ((char < nextChar)) {
+                    integer -= char
+                }
+            }
+
+            return integer;
+        };
+
+        const result = romanToInt(string);
+        document.querySelector("#output").innerText = result
+
+        console.log(romanToInt(string));
+
+    </script>
+
+</body>
+
+</html>
