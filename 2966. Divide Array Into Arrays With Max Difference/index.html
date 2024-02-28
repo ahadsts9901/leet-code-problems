@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2703</title>
+</head>
+
+<body>
+
+    <h1>2966. Divide Array Into Arrays With Max Difference</h1>
+
+    <script type="module">
+
+        const arr = [33, 26, 4, 18, 16, 24, 24, 15, 8, 18, 34, 20, 24, 16, 3]
+        const diff = 16
+
+        var divideArray = function (nums, k) {
+
+            const numbers = nums.sort(function (a, b) { return a - b })
+
+            var finalResult = []
+
+            let j = 0
+            while (j < numbers.length) {
+                finalResult.push([numbers[j], numbers[j + 1], numbers[j + 2]])
+                j += 3
+            }
+
+            var isDifferenceValid = true
+
+            finalResult.map((array) => {
+                if (array[1] - array[0] > k || array[2] - array[0] > k || array[2] - array[1] > k) {
+                    isDifferenceValid = false
+                }
+            })
+
+            if (isDifferenceValid) {
+                return finalResult
+            } else {
+                return []
+            }
+
+        };
+
+        console.log(divideArray(arr, diff));
+
+    </script>
+
+</body>
+
+</html>
