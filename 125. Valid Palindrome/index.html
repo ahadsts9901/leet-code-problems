@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 125</title>
+</head>
+
+<body>
+
+    <h1>125. Valid Palindrome</h1>
+
+    <script type="module">
+
+        const str = "A man, a plan, a canal: Panama"
+
+        var isPalindrome = function (s) {
+
+            const allowedLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+            let strAlphabets = []
+
+            for (let i = 0; i < s.length; i++) {
+                if (allowedLetters.includes(s[i])) {
+                    strAlphabets.push(s[i])
+                }
+            }
+
+            let originalStr = strAlphabets.join("").toLowerCase()
+            let reversedStr = strAlphabets.reverse().join("").toLowerCase()
+
+            if (originalStr === reversedStr) {
+                return true
+            }
+
+            return false
+
+
+        };
+
+        console.log(isPalindrome(str));
+
+    </script>
+
+</body>
+
+</html>
