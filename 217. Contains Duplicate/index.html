@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 217</title>
+</head>
+
+<body>
+
+    <h1>217. Contains Duplicate</h1>
+
+    <script type="module">
+
+        let num = [1, 2, 3, 1]
+
+        var containsDuplicate = function (nums) {
+            const s = new Set(nums);
+            console.log(s);
+            return s.size !== nums.length
+        };
+
+        console.log(containsDuplicate(num));
+
+        // In JavaScript, new Set() is a constructor 
+        // function that creates a new Set object.
+        // Sets are a collection of unique values,
+        // which means that each value in a Set can
+        // only occur once. This data structure is
+        // useful when you need to store unique elements
+        // and quickly check for the presence
+        // of a particular value.
+
+    </script>
+
+</body>
+
+</html>
