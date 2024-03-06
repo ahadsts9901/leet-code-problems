@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2351</title>
+</head>
+
+<body>
+
+    <h1>2351. First Letter to Appear Twice</h1>
+
+    <script type="module">
+
+        const word = "abccbaacz"
+
+        var repeatedCharacter = function (s) {
+
+            const strs = []
+
+            for (let i = 0; i < s.length; i++) {
+                if (strs.includes(s[i])) {
+                    return s[i]
+                }
+                strs.push(s[i])
+            }
+            return ""
+
+        };
+
+        console.log(repeatedCharacter(word));
+
+    </script>
+
+</body>
+
+</html>
