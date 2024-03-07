@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2942</title>
+</head>
+
+<body>
+
+    <h1>2942. Find Words Containing Character</h1>
+
+    <script type="module">
+
+        const arr = ["abc", "bcd", "aaaa", "cbc"]
+        const char = "a"
+
+        var findWordsContaining = function (words, x) {
+
+            const indexes = []
+
+            words.map((word, i) => {
+                if (word.includes(x)) {
+                    indexes.push(i)
+                }
+            })
+
+            return indexes
+
+        };
+
+        console.log(findWordsContaining(arr, char));
+
+    </script>
+
+</body>
+
+</html>
