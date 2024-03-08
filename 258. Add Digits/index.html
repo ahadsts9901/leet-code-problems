@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 258</title>
+</head>
+
+<body>
+
+    <!-- <h1>258. Add Digits</h1> -->
+
+    <script type="module">
+
+        let number = 382
+
+        var addDigits = function (num) {
+
+            var nums = num
+
+            while (nums > 9) {
+
+                nums = nums.toString().split("")
+
+                var _nums = 0
+
+                nums.map((n) => {
+                    _nums = _nums + +n
+                })
+
+                nums = _nums
+
+            }
+
+            return nums
+
+
+        };
+
+        console.log(addDigits(number));
+
+    </script>
+
+</body>
+
+</html>
