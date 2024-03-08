@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 242</title>
+</head>
+
+<body>
+
+    <h1>242. Valid Anagram</h1>
+
+    <script type="module">
+
+        const first = "anagram"
+        const second = "nagaram"
+
+        var isAnagram = function (s, t) {
+
+            s = s.split("").sort().join("")
+            t = t.split("").sort().join("")
+
+            return s === t
+
+        };
+
+        console.log((isAnagram(first, second)));
+
+    </script>
+
+</body>
+
+</html>

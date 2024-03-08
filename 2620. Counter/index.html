@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2620</title>
+</head>
+
+<body>
+
+    <h1>2620. Counter</h1>
+
+    <script type="module">
+
+        let num = 10
+
+        var createCounter = function (n) {
+
+            return function () {
+                return n++
+            };
+
+        };
+
+        const counter = createCounter(10)
+
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+
+    </script>
+
+</body>
+
+</html>

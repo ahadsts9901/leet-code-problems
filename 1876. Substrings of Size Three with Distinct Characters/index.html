@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1876</title>
+</head>
+
+<body>
+
+    <h1>1876. Substrings of Size Three with Distinct Characters</h1>
+
+    <script type="module">
+
+        const string = "xyzzaz"
+
+        var countGoodSubstrings = function (s) {
+
+            var strs = 0
+
+            for (let i = 0; i < s.length; i++) {
+
+                if (s[i] && s[i + 1] && s[i + 2]) {
+                    if (s[i] !== s[i + 1] && s[i] !== s[i + 2] && s[i + 1] !== s[i + 2]) {
+                        strs++
+                    }
+                }
+
+            }
+
+            return strs
+
+        };
+
+        console.log(countGoodSubstrings(string));
+
+    </script>
+
+</body>
+
+</html>
