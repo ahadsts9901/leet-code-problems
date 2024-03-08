@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1160</title>
+</head>
+
+<body>
+
+    <h1>1160. Find Words That Can Be Formed by Characters</h1>
+
+    <script type="module">
+
+
+        const arr = ["cat", "bt", "hat", "tree"]
+        const character = "atach"
+
+        var countCharacters = function (words, chars) {
+
+            if (!words.length || !chars.length) return 0
+
+            var includingWords = []
+
+            words.map((word) => {
+                var _word = 0
+                var _chars = chars.split("")
+                for (let i = 0; i < word.length; i++) {
+
+                    if (_chars.includes(word[i])) {
+                        _chars.splice(_chars.indexOf(word[i]), 1)
+                        _word++
+                    }
+
+                }
+
+                if (word.length == _word) {
+                    includingWords.push(word)
+                }
+            })
+
+            var count = 0
+
+            includingWords.map((word) => {
+                count += word.length
+            })
+
+            return count
+
+        };
+
+        console.log(countCharacters(arr, character));
+
+
+    </script>
+
+</body>
+
+</html>
