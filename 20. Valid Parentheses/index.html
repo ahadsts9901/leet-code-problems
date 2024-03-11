@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 20</title>
+</head>
+
+<body>
+
+    <!-- <h1>20. Valid Parentheses</h1> -->
+
+    <script type="module">
+
+
+
+        var isValid = function (s) {
+
+            const hashMap = {
+                "{": "}",
+                "(": ")",
+                "[": "]"
+            }
+
+            const stack = []
+
+            for (let i of s) {
+                if (hashMap[i]) {
+                    stack.push(hashMap[i])
+                } else if (stack.length > 0 && stack[stack.length - 1] === i) {
+                    stack.pop()
+                } else {
+                    return false
+                }
+            }
+
+            return stack.length == 0
+
+        }
+
+        const str = "()[]{}"
+        console.log(isValid(str));
+
+    </script>
+
+</body>
+
+</html>
