@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 7</title>
+</head>
+
+<body>
+
+    <h1>7. Reverse Integer</h1>
+
+    <script type="module">
+
+        var reverse = function (x) {
+
+            x = x.toString()
+            const numsArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            var nums = x.split("")
+            var extractedNums = []
+            var isNegative = false
+
+            if (nums[0] === "-") {
+                isNegative = true
+            }
+
+            for (let i = 0; i < nums.length; i++) {
+
+                if (numsArr.includes(nums[i])) {
+                    extractedNums.push(nums[i])
+                }
+
+            }
+
+            extractedNums = extractedNums.reverse()
+
+            if (extractedNums[0] === "0") {
+                extractedNums.shift()
+            }
+
+            if (+extractedNums.join("") >= 2147483647 || extractedNums.join("") - (extractedNums.join("") * 2) <= -2147483648) {
+                return 0
+            }
+            else if (isNegative) {
+                return extractedNums.join("") - (extractedNums.join("") * 2)
+            } else {
+                return +extractedNums.join("")
+            }
+
+        };
+
+        console.log(reverse(1230));
+
+    </script>
+
+</body>
+
+</html>
