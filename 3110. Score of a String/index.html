@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3110</title>
+</head>
+
+<body>
+
+    <h1>3110. Score of a String</h1>
+
+    <script type="module">
+
+        // Example 1:
+
+        // Input: s = "hello"
+
+        // Output: 13
+
+        // Explanation:
+
+        // The ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.
+
+        // Example 2:
+
+        // Input: s = "zaz"
+
+        // Output: 50
+
+        // Explanation:
+
+        // The ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.
+
+        var scoreOfString = function (s) {
+
+            const asciiCodes = {
+                a: 97,
+                b: 98,
+                c: 99,
+                d: 100,
+                e: 101,
+                f: 102,
+                g: 103,
+                h: 104,
+                i: 105,
+                j: 106,
+                k: 107,
+                l: 108,
+                m: 109,
+                n: 110,
+                o: 111,
+                p: 112,
+                q: 113,
+                r: 114,
+                s: 115,
+                t: 116,
+                u: 117,
+                v: 118,
+                w: 119,
+                x: 120,
+                y: 121,
+                z: 122
+            };
+
+            var result = 0
+
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] + 1) {
+                    let num = asciiCodes[`${s[i]}`] - asciiCodes[`${s[i + 1]}`]
+                    if (num < 0) {
+                        num = num - num * 2
+                    }
+                    if(!isNaN(num)){
+                        result += num
+                    }
+                }
+            }
+
+            return result
+
+        };
+
+        const string = "zaz"
+
+        console.log(scoreOfString(string))
+
+    </script>
+
+</body>
+
+</html>
