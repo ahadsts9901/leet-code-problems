@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 387</title>
+</head>
+
+<body>
+
+    <!-- <h1>387. First Unique Character in a String</h1> -->
+
+    <script type="module">
+
+        // Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+        // Example 1:
+
+        // Input: s = "leetcode"
+        // Output: 0
+        // Example 2:
+
+        // Input: s = "loveleetcode"
+        // Output: 2
+        // Example 3:
+
+        // Input: s = "aabb"
+        // Output: -1
+
+        var firstUniqChar = function (s) {
+
+            const hashmap = {}
+
+            for (let i = 0; i < s.length; i++) {
+
+                hashmap[s[i]] = hashmap[s[i]] + 1 || 0 + 1
+
+            }
+
+            var uniqueChar
+
+            for (let i = 0; i < s.length; i++) {
+
+                if (hashmap[s[i]] == 1) {
+                    return i
+                    break
+                }
+
+            }
+
+            return -1
+
+        };
+
+        console.log(firstUniqChar("aabb"))
+
+    </script>
+
+</body>
+
+</html>
