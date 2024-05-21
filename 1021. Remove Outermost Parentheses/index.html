@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1021</title>
+</head>
+
+<body>
+
+    <h1>1021. Remove Outermost Parentheses</h1>
+
+    <script type="module">
+
+        // Example 1:
+
+        // Input: s = "(()())(())"
+        // Output: "()()()"
+        // Explanation:
+        // The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
+        // After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
+        // Example 2:
+
+        // Input: s = "(()())(())(()(()))"
+        // Output: "()()()()(())"
+        // Explanation:
+        // The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
+        // After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
+        // Example 3:
+
+        // Input: s = "()()"
+        // Output: ""
+        // Explanation:
+        // The input string is "()()", with primitive decomposition "()" + "()".
+        // After removing outer parentheses of each part, this is "" + "" = "".
+
+        var removeOuterParentheses = function (s) {
+            let openBrackets = 0;
+            let result = "";
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === "(") {
+                    if (openBrackets) result += s[i];
+                    openBrackets++;
+                }
+                else if (s[i] === ")") {
+                    openBrackets--;
+                    if (openBrackets) result += s[i];
+                }
+            }
+            return result;
+        };
+
+        console.log(removeOuterParentheses("(()())(())"))
+
+    </script>
+
+</body>
+
+</html>
