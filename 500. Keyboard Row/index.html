@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 500</title>
+</head>
+
+<body>
+
+    <!-- <h1>500. Keyboard Row</h1> -->
+
+    <script type="module">
+
+        // Example 1:
+
+        // Input: words = ["Hello","Alaska","Dad","Peace"]
+        // Output: ["Alaska","Dad"]
+        // Example 2:
+
+        // Input: words = ["omk"]
+        // Output: []
+        // Example 3:
+
+        // Input: words = ["adsdf","sfd"]
+        // Output: ["adsdf","sfd"]
+
+
+        var findWords = function (words) {
+
+            const firstRow = "qwertyuiop".split("")
+            const secondRow = "asdfghjkl".split("")
+            const thirdRow = "zxcvbnm".split("")
+
+            const result = []
+
+            words.forEach((word) => {
+                if (firstRow.includes(word[0].toLowerCase())) {
+                    const _word = []
+                    word.split("").forEach((_w) => {
+                        if (firstRow.includes(_w.toLowerCase())) {
+                            _word.push("-")
+                        }
+                    })
+                    if (word.length == _word.length) {
+                        result.push(word)
+                    }
+                }
+                if (secondRow.includes(word[0].toLowerCase())) {
+                    const _word = []
+                    word.split("").forEach((_w) => {
+                        if (secondRow.includes(_w.toLowerCase())) {
+                            _word.push("-")
+                        }
+                    })
+                    if (word.length == _word.length) {
+                        result.push(word)
+                    }
+                }
+                if (thirdRow.includes(word[0].toLowerCase())) {
+                    const _word = []
+                    word.split("").forEach((_w) => {
+                        if (thirdRow.includes(_w.toLowerCase())) {
+                            _word.push("-")
+                        }
+                    })
+                    if (word.length == _word.length) {
+                        result.push(word)
+                    }
+                }
+            })
+
+            return result
+
+        };
+
+        console.log(findWords(["Hello", "Alaska", "Dad", "Peace"]))
+
+    </script>
+
+</body>
+
+</html>
